@@ -3,11 +3,11 @@ from telegram import Update
 from telegram.ext import Updater, MessageHandler, CallbackContext, Filters
 
 # Source group
-source_group_id = -1001951006269
+source_group_id =
 # Target group
-target_group_id = -1001661936464
+target_group_id =
 # Bot token
-bot_token = '5964334978:AAFCFR2Ea2yTNc4bVGcWi2ouihJY4d_X9ss'
+bot_token = ''
 
 # logining settings
 logging.basicConfig(format='%(asctime)s-%(name)s-%(levelname)s-%(message)s', level=logging.INFO)
@@ -30,7 +30,7 @@ updater = Updater(token=bot_token, use_context=True)
 
 dispatcher = updater.dispatcher
 
-message_hendler = MessageHandler(Filters.chat(source_group_id) & Filters.text, hendle_message)
+message_hendler = MessageHandler(Filters.chat(source_group_id), hendle_message)
 dispatcher.add_handler(message_hendler)
 
 updater.start_polling()
