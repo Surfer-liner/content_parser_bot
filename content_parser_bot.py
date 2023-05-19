@@ -1,6 +1,6 @@
 import logging
-# from telegram import Updater, Bot
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filter, CallbackContext
+from telegram import Update
+from telegram.ext import Updater, MessageHandler, CallbackContext, Filters
 
 # Source group
 source_group_id = -1001951006269
@@ -30,7 +30,7 @@ updater = Updater(token=bot_token, use_context=True)
 
 dispatcher = updater.dispatcher
 
-message_hendler = MessageHandler(Filter.chat(source_group_id) & Filter.text, hendle_message)
+message_hendler = MessageHandler(Filters.chat(source_group_id) & Filters.text, hendle_message)
 dispatcher.add_handler(message_hendler)
 
 updater.start_polling()
